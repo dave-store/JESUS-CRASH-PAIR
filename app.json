@@ -1,0 +1,17 @@
+{
+    "name": "JESUS CRASH Session Generator",
+    "description": "Web Session Generator",
+    "logo": "https://files.catbox.moe/pt6l5i.png",
+    "repository": "https://github.com/dave-store/JESUS-CRASH-PAIR",
+    "keywords": ["DAWENSTECH","DAWENS BOY"],
+    "success_url": "/", 
+    "buildpacks": [{ "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest" } ],
+    "env": {      
+      "PORT": {
+        "description": "Port for web app.4000,5000,3000... any!",
+        "value": "5000",
+        "required": false 
+      }
+    }   
+
+}
