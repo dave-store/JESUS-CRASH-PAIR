@@ -67,23 +67,25 @@ var randomItem = selectRandomItem(items);
                     }
                     const randomText = generateRandomText();
                     try {
-                        const { upload } = require('./mega');
                         const mega_url = await upload(fs.createReadStream(rf), `${sock.user.id}.json`);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
 
 const getSessionDesc = (sessionId, userName = 'User') => {
-  const currentDate = new Date().toLocaleDateString('en-US', {
+    const currentDate = new Date().toLocaleDateString('en-US', {
         weekday: 'long',
         year: 'numeric',
         month: 'long',
         day: 'numeric'
     });
-    
+
     const currentTime = new Date().toLocaleTimeString('en-US', {
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit'
     });
+
+    return { currentDate, currentTime };
+};
                         let md = "JESUS-CRASH-V2~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
                         let desc = `╭━━━❰ 💎 *𝐉𝐄𝐒𝐔𝐒-𝐂𝐑𝐀𝐒𝐇-𝐕𝟐* 💎 ❱━━━╮
