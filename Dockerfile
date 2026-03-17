@@ -1,21 +1,27 @@
-FROM node:lts-buster
+FROM node:20-bookworm
 
+# Install dependencies
 RUN apt-get update && \
   apt-get install -y \
   ffmpeg \
   imagemagick \
   webp && \
-  apt-get upgrade -y && \
   rm -rf /var/lib/apt/lists/*
-  
+
+# Set working directory
 WORKDIR /usr/src/app
 
-COPY package.json .
+# Copy package first (for caching)
+COPY package*.json ./
 
-RUN npm install && npm install -g qrcode-terminal pm2
+# Install node deps
+RUN npm install && npm install -g pm2 qrcode-terminal
 
+# Copy rest of files
 COPY . .
 
+# Expose port
 EXPOSE 5000
 
-CMD ["npm", "start"]
+# Start app with pm2 (optional but better)
+CMD ["pm2-runtime", "start", "npm", "--", "start"]
