@@ -1,4 +1,4 @@
-FROM node:lts-bookworm  # Debian 12 (current stable)
+FROM node:lts-bookworm
 
 RUN apt-get update && \
   apt-get install -y \
