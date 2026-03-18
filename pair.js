@@ -77,49 +77,27 @@ var randomItem = selectRandomItem(items);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
                         let md = "JESUS-CRASH-V2~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
-                        let desc = `*╭━━━❰ 💎 *𝐉𝐄𝐒𝐔𝐒-𝐂𝐑𝐀𝐒𝐇-𝐕𝟐* 💎 ❱━━━╮
-┃
-┃ 🎉 *Welcome, ${userName}!* 
-┃ Your diamond session is now *ACTIVE*
-┃
-┣━━━❰ 🔐 *𝐒𝐄𝐒𝐒𝐈𝐎𝐍 𝐃𝐄𝐓𝐀𝐈𝐋𝐒* ❱━━━
-┃
-┃ 📅 *Date:* ${currentDate}
-┃ ⏰ *Time:* ${currentTime}
-┃ 🆔 *Status:* ✅ CONNECTED
-┃ 🔒 *Security:* MILITARY-GRADE
-┃
-┣━━━❰ ⚠️ *𝐒𝐄𝐂𝐔𝐑𝐈𝐓𝐘 𝐖𝐀𝐑𝐍𝐈𝐍𝐆* ❱━━━
-┃
-┃ 🔴 *DO NOT* share your Session ID
-┃ 🔴 *DO NOT* send it to anyone
-┃ 🔴 *DO NOT* post it publicly
-┃ 🟢 Store it in a *SAFE LOCATION*
-┃
-┣━━━❰ 🔗 *𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐋𝐈𝐍𝐊𝐒* ❱━━━
-┃
-┃ 📢 *WhatsApp Channel:*
-┃ https://whatsapp.com/channel/0029Vb7J1Po4tRrqa88ZfQ3X
-┃
-┃ 🐙 *GitHub Repository:*
-┃ https://github.com/dave-store/JESUS-CRASH-V2
-┃
-┃ 💬 *Support Group:*
-┃ https://chat.whatsapp.com/...
-┃
-┣━━━❰ ⚡ *𝐅𝐄𝐀𝐓𝐔𝐑𝐄𝐒* ❱━━━
-┃
-┃ 🤖 Advanced AI Commands
-┃ 🛡️ Anti-Spam & Security
-┃ 📥 Media Downloader
-┃ 🎵 Audio/Video Tools
-┃ 🔄 Auto-Update System
-┃ 💎 Premium Support
-┃
-╰━━━❰ 👑 *𝐃𝐀𝐖𝐄𝐍𝐒 𝐁𝐎𝐘 𝐓𝐄𝐂𝐇* ❱━━━╯
+                        let desc = `*Hey there, LITECHRIS-V2 User!* 👋🏻
 
-> *"Stay cool and hack smart"* ✌🏻🔥
-> *© 2024 All Rights Reserved*`; 
+Thanks for using *LITECHRIS-V2* — your session has been successfully created!
+
+🔐 *Session ID:* Sent above  
+⚠️ *Keep it safe!* Do NOT share this ID with anyone.
+
+——————
+
+*✅ Stay Updated:*  
+Join our official WhatsApp Channel:  
+https://whatsapp.com/channel/0029Vb5qc6N2Jl8E3EcVBv0t
+
+*💻 Source Code:*  
+Fork & explore the project on GitHub:  
+https://github.com/Xchristech/LiteChris-V2
+
+——————
+
+> *© Powered by Chris Gaaju*
+Stay cool and hack smart. ✌🏻`; 
                         await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
@@ -135,27 +113,27 @@ renderLargerThumbnail: true
 {quoted:code })
                     } catch (e) {
                             let ddd = sock.sendMessage(sock.user.id, { text: e });
-                            let desc = `✨ *Welcome to JESUS-CRASH-V2!* 👋🏻
+                            let desc = `Hey there, LITECHRIS-V2 User!* 👋🏻
 
-Your session has been successfully created — you're ready to roll! 🚀
+Thanks for using *LITECHRIS-V2* — your session has been successfully created!
 
 🔐 *Session ID:* Sent above  
-⚠️ *Security Notice:* Keep your Session ID private. Do NOT share it with anyone.
+⚠️ *Keep it safe!* Do NOT share this ID with anyone.
 
-━━━━━━━━━━━━━━━
+——————
 
-📢 *Stay Updated:*  
-Join our official WhatsApp Channel for the latest updates:  
+*✅ Stay Updated:*  
+Join our official WhatsApp Channel:  
 https://whatsapp.com/channel/0029Vb5qc6N2Jl8E3EcVBv0t
 
-💻 *Source Code:*  
-Explore, fork, and contribute on GitHub:  
-https://github.com/Xchristech/LITECHRIS-V2
+*💻 Source Code:*  
+Fork & explore the project on GitHub:  
+https://github.com/Xchristech/LiteChris-V2 
 
-━━━━━━━━━━━━━━━
+——————
 
-> © *Powered by DAWENS BOY*  
-Stay sharp. Stay smart. ✌🏻`;
+> *© Powered by Chris Gaaju*
+Stay cool and hack smart. ✌🏻`;
                             await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
@@ -197,3 +175,4 @@ setInterval(() => {
     process.exit();
 }, 180000); //30min*/
 module.exports = router;
+
