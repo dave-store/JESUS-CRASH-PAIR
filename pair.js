@@ -6,26 +6,30 @@ const pino = require("pino");
 const { default: makeWASocket, useMultiFileAuthState, delay, Browsers, makeCacheableSignalKeyStore, getAggregateVotesInPollMessage, DisconnectReason, WA_DEFAULT_EPHEMERAL, jidNormalizedUser, proto, getDevice, generateWAMessageFromContent, fetchLatestBaileysVersion, makeInMemoryStore, getContentType, generateForwardMessageContent, downloadContentFromMessage, jidDecode } = require('@whiskeysockets/baileys')
 
 const { upload } = require('./mega');
+
 function removeFile(FilePath) {
     if (!fs.existsSync(FilePath)) return false;
     fs.rmSync(FilePath, { recursive: true, force: true });
 }
+
 router.get('/', async (req, res) => {
     const id = makeid();
     let num = req.query.number;
-    async function CHRIS_XD_PAIR_CODE() {
+
+    async function ZEPHYR_PAIR_CODE() {
         const {
             state,
             saveCreds
         } = await useMultiFileAuthState('./temp/' + id);
+
         try {
-var items = ["Safari"];
-function selectRandomItem(array) {
-  var randomIndex = Math.floor(Math.random() * array.length);
-  return array[randomIndex];
-}
-var randomItem = selectRandomItem(items);
-            
+            var items = ["Safari", "Chrome", "Firefox"];
+            function selectRandomItem(array) {
+                var randomIndex = Math.floor(Math.random() * array.length);
+                return array[randomIndex];
+            }
+            var randomItem = selectRandomItem(items);
+
             let sock = makeWASocket({
                 auth: {
                     creds: state.creds,
@@ -37,6 +41,7 @@ var randomItem = selectRandomItem(items);
                 syncFullHistory: false,
                 browser: Browsers.macOS(randomItem)
             });
+
             if (!sock.authState.creds.registered) {
                 await delay(1500);
                 num = num.replace(/[^0-9]/g, '');
@@ -45,20 +50,19 @@ var randomItem = selectRandomItem(items);
                     await res.send({ code });
                 }
             }
-            sock.ev.on('creds.update', saveCreds);
-            sock.ev.on("connection.update", async (s) => {
 
-    const {
-                    connection,
-                    lastDisconnect
-                } = s;
-                
+            sock.ev.on('creds.update', saveCreds);
+
+            sock.ev.on("connection.update", async (s) => {
+                const { connection, lastDisconnect } = s;
+
                 if (connection == "open") {
                     await delay(5000);
                     let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
                     let rf = __dirname + `/temp/${id}/creds.json`;
+
                     function generateRandomText() {
-                        const prefix = "3EB";
+                        const prefix = "ZEP";
                         const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
                         let randomText = prefix;
                         for (let i = prefix.length; i < 22; i++) {
@@ -68,111 +72,90 @@ var randomItem = selectRandomItem(items);
                         return randomText;
                     }
                     const randomText = generateRandomText();
+
                     try {
-
-
-                        
-                        const { upload } = require('./mega');
                         const mega_url = await upload(fs.createReadStream(rf), `${sock.user.id}.json`);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
                         let md = "JESUS-CRASH-V2~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
-                        let desc = `*Hey there, LITECHRIS-V2 User!* 👋🏻
 
-Thanks for using *LITECHRIS-V2* — your session has been successfully created!
+                        let desc = `*مرحباً، مستخدم ZEPHYR!* 👋🏻
 
-🔐 *Session ID:* Sent above  
-⚠️ *Keep it safe!* Do NOT share this ID with anyone.
+تم إنشاء الجلسة بنجاح!
 
-——————
-
-*✅ Stay Updated:*  
-Join our official WhatsApp Channel:  
-https://whatsapp.com/channel/0029Vb5qc6N2Jl8E3EcVBv0t
-
-*💻 Source Code:*  
-Fork & explore the project on GitHub:  
-https://github.com/Xchristech/LiteChris-V2
+🔐 *معرف الجلسة:* مرسل أعلاه  
+⚠️ *احفظه بأمان!* لا تشاركه مع أي شخص.
 
 ——————
 
-> *© Powered by Chris Gaaju*
-Stay cool and hack smart. ✌🏻`; 
+*© Powered by ZEPHYR*
+استمتع بالبوت! ✌🏻`;
+
                         await sock.sendMessage(sock.user.id, {
-text: desc,
-contextInfo: {
-externalAdReply: {
-title: "ᴍᴀʟᴠɪɴ-xᴅ",
-thumbnailUrl: "https://files.catbox.moe/g72e6z.jpg",
-sourceUrl: "https://whatsapp.com/channel/0029Vb5qc6N2Jl8E3EcVBv0t",
-mediaType: 1,
-renderLargerThumbnail: true
-}  
-}
-},
-{quoted:code })
+                            text: desc,
+                            contextInfo: {
+                                externalAdReply: {
+                                    title: "ZEPHYR BOT",
+                                    body: "WhatsApp Bot Pairing",
+                                    thumbnailUrl: "https://i.ibb.co/qM85X4Zq/37a662613404ed485683741d9889200e.jpg", // غيرها بصورة خاصة بك لو عايز
+                                    sourceUrl: "", // اتركها فاضية أو حط رابطك الخاص
+                                    mediaType: 1,
+                                    renderLargerThumbnail: true
+                                }
+                            }
+                        }, { quoted: code });
+
                     } catch (e) {
-                            let ddd = sock.sendMessage(sock.user.id, { text: e });
-                            let desc = `Hey there, LITECHRIS-V2 User!* 👋🏻
+                        let ddd = await sock.sendMessage(sock.user.id, { text: "حدث خطأ أثناء رفع الجلسة." });
 
-Thanks for using *LITECHRIS-V2* — your session has been successfully created!
+                        let desc = `*مرحباً، مستخدم ZEPHYR!* 👋🏻
 
-🔐 *Session ID:* Sent above  
-⚠️ *Keep it safe!* Do NOT share this ID with anyone.
+تم إنشاء الجلسة بنجاح!
 
-——————
-
-*✅ Stay Updated:*  
-Join our official WhatsApp Channel:  
-https://whatsapp.com/channel/0029Vb5qc6N2Jl8E3EcVBv0t
-
-*💻 Source Code:*  
-Fork & explore the project on GitHub:  
-https://github.com/Xchristech/LiteChris-V2 
+🔐 *معرف الجلسة:* مرسل أعلاه  
+⚠️ *احفظه بأمان!* لا تشاركه مع أي شخص.
 
 ——————
 
-> *© Powered by Chris Gaaju*
-Stay cool and hack smart. ✌🏻`;
-                            await sock.sendMessage(sock.user.id, {
-text: desc,
-contextInfo: {
-externalAdReply: {
-title: "ᴍᴀʟᴠɪɴ-xᴅ",
-thumbnailUrl: "https://files.catbox.moe/g72e6z.jpg",
-sourceUrl: "https://whatsapp.com/channel/0029Vb5qc6N2Jl8E3EcVBv0t",
-mediaType: 2,
-renderLargerThumbnail: true,
-showAdAttribution: true
-}  
-}
-},
-{quoted:ddd })
+*© Powered by ZEPHYR*
+استمتع بالبوت! ✌🏻`;
+
+                        await sock.sendMessage(sock.user.id, {
+                            text: desc,
+                            contextInfo: {
+                                externalAdReply: {
+                                    title: "ZEPHYR BOT",
+                                    body: "WhatsApp Bot Session",
+                                    thumbnailUrl: "https://i.ibb.co/qM85X4Zq/37a662613404ed485683741d9889200e.jpg",
+                                    sourceUrl: "",
+                                    mediaType: 1,
+                                    renderLargerThumbnail: true
+                                }
+                            }
+                        }, { quoted: ddd });
                     }
+
                     await delay(10);
                     await sock.ws.close();
                     await removeFile('./temp/' + id);
-                    console.log(`👤 ${sock.user.id} 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱 ✅ 𝗥𝗲𝘀𝘁𝗮𝗿𝘁𝗶𝗻𝗴 𝗽𝗿𝗼𝗰𝗲𝘀𝘀...`);
+                    console.log(`👤 ${sock.user.id} Connected Successfully ✅ Restarting...`);
                     await delay(10);
                     process.exit();
                 } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
                     await delay(10);
-                    CHRISM_XD_PAIR_CODE();
+                    ZEPHYR_PAIR_CODE();
                 }
             });
         } catch (err) {
-            console.log("service restated");
+            console.log("Service restarted due to error");
             await removeFile('./temp/' + id);
             if (!res.headersSent) {
-                await res.send({ code: "❗ Service Unavailable" });
+                await res.send({ code: "❗ الخدمة غير متوفرة حالياً" });
             }
         }
     }
-   return await CHRIS_XD_PAIR_CODE();
-});/*
-setInterval(() => {
-    console.log("☘️ 𝗥𝗲𝘀𝘁𝗮𝗿𝘁𝗶𝗻𝗴 𝗽𝗿𝗼𝗰𝗲𝘀𝘀...");
-    process.exit();
-}, 180000); //30min*/
-module.exports = router;
 
+    return await ZEPHYR_PAIR_CODE();
+});
+
+module.exports = router;
