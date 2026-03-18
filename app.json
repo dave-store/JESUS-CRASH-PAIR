@@ -1,9 +1,9 @@
 {
-    "name": "JESUS CRASH Session Generator",
+    "name": "pair session",
     "description": "Web Session Generator",
-    "logo": "https://files.catbox.moe/pt6l5i.png",
-    "repository": "https://github.com/dave-store/JESUS-CRASH-PAIR",
-    "keywords": ["DAWENSTECH","DAWENS BOY"],
+    "logo": "https://i.imgur.com/teQzVR1.jpeg",
+    "repository": "https://github.com/XdKing2/malvin-pair",
+    "keywords": ["MalvinTech","XdKing2"],
     "success_url": "/", 
     "buildpacks": [{ "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest" } ],
     "env": {      
